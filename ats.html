@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ATS Checker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h1>ATS Score Checker</h1>
+
+  <button onclick="checkATS()">Calculate ATS Score</button>
+
+  <h2 id="scoreText"></h2>
+  <canvas id="chart"></canvas>
+</div>
+
+<script>
+function calculateATS(text) {
+  let score = 0;
+
+  const keywords = [
+    "project", "experience", "education",
+    "skills", "HTML", "CSS", "JavaScript",
+    "Python", "Java"
+  ];
+
+  keywords.forEach(word => {
+    if (text.toLowerCase().includes(word.toLowerCase())) {
+      score += 10;
+    }
+  });
+
+  if (text.length > 500) score += 20;
+
+  return Math.min(score, 100);
+}
+
+function checkATS() {
+
+  const data = JSON.parse(localStorage.getItem("resumeData"));
+
+  const text = JSON.stringify(data);
+  const score = calculateATS(text);
+
+  document.getElementById("scoreText").innerText =
+    "ATS Score: " + score + " / 100";
+
+  new Chart(document.getElementById("chart"), {
+    type: "doughnut",
+    data: {
+      labels: ["Accepted", "Rejected"],
+      datasets: [{
+        data: [score, 100 - score]
+      }]
+    }
+  });
+}
+</script>
+
+</body>
+</html>

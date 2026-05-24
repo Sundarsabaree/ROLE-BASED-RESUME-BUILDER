@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="resume-shell">
+  <main class="resume-shell">
+    <article class="resume-card">
+      <aside class="resume-aside">
+        <div class="profile-card">
+          <div class="avatar"><img id="avatarImg" alt="avatar" style="display:none;width:100px;height:100px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,0.18);"></div>
+          <div class="profile-name" id="resumeName"></div>
+          <div class="profile-role" id="resumeRole"></div>
+        </div>
+
+        <section class="info-section">
+          <h3>Contact</h3>
+          <ul class="contact-list">
+            <li id="email"></li>
+            <li id="phone"></li>
+            <li id="address"></li>
+            <li id="linkedin"></li>
+            <li id="portfolio"></li>
+          </ul>
+        </section>
+
+        <section class="info-section">
+          <h3>Languages</h3>
+          <p id="languages"></p>
+        </section>
+
+        <section class="info-section">
+          <h3>Certifications</h3>
+          <p id="certifications"></p>
+        </section>
+      </aside>
+
+      <section class="resume-main">
+        <div class="resume-header">
+          <div class="header-line"></div>
+          <div class="header-tag">Professional Resume</div>
+        </div>
+
+        <div class="section-block">
+          <h3>Career Objective</h3>
+          <p id="objective" class="section-copy"></p>
+        </div>
+
+        <div class="section-block">
+          <h3>Hard Skills</h3>
+          <p id="skills" class="section-copy"></p>
+        </div>
+
+        <div class="section-block">
+          <h3>Soft Skills</h3>
+          <p id="softSkillsDisplay" class="section-copy"></p>
+        </div>
+
+        <div class="section-block">
+          <h3>Experience</h3>
+          <p id="experience" class="section-copy"></p>
+        </div>
+
+        <div class="section-block">
+          <h3>Education</h3>
+          <p id="education" class="section-copy"></p>
+        </div>
+
+        <div class="section-block">
+          <h3>Projects</h3>
+          <p id="projects" class="section-copy"></p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+      <div class="resume-action-bar">
+        <button type="button" class="secondary-button" onclick="window.location.href='index.html'">Edit Resume</button>
+        <button type="button" class="primary-button" onclick="downloadResumeFile()">Download Resume</button>
+      </div>
+  <script src="script.js"></script>
+</body>
+</html>
